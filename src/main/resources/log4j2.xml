@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN"> 
+	<properties>
+		<property name="LOG_HOME">C:/Gary/Work/workspace/logs/GBSP</property>
+		<property name="FILE_NAME">serverlog</property>
+	</properties>
+	<Appenders>  
+		<Console name="Console" target="SYSTEM_OUT">  
+			<PatternLayout pattern="[%d{HH:mm:ss.SSS}] [%-5level] [%t] [%F - %M] : %msg%n %xEx{filters(${filters})}%n" />  
+		</Console>
+		
+		<RollingFile name="logFile" fileName="${LOG_HOME}/${FILE_NAME}.log" filePattern="${LOG_HOME}/$${date:yyyy-MM}/${FILE_NAME}-%d{yyyy-MM-dd HH-mm}-%i.log">
+			<PatternLayout pattern="[%d{HH:mm:ss.SSS}] [%-5level] [%t] [%F - %M] : %msg%n %xEx{filters(${filters})}%n"/>
+			<Policies>
+				<TimeBasedTriggeringPolicy interval="1"/>
+				<SizeBasedTriggeringPolicy size="500 MB"/>
+			</Policies>
+			<DefaultRolloverStrategy max="20"/>
+		</RollingFile >
+	</Appenders>  
+	<Loggers>  
+		<Root level='debug'>
+			<AppenderRef ref="logFile" />  
+			<AppenderRef ref="Console" />  
+		</Root>
+	</Loggers>  
+</Configuration>

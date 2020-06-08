@@ -1,0 +1,31 @@
+body{
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position:left top;
+    background-image: url(../images/background01.jpg);
+    background-color: #ccc;
+    padding-top: 56px;
+}
+#dbody{width:350px; border:solid 2px #fff;}
+.maindiv{
+    background-color: white;
+}
+
+.form-signin{
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+label.error {
+    color: #EA5200;
+}
+
+.dropdown-item {
+    color:white;
+}
+
+.dropdown-item:hover {
+    color: black;
+}
